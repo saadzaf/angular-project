@@ -1,0 +1,41 @@
+<table class="table " *ngIf="!showhide" style="border-radius: 8px ; background-color: rgb(199, 199, 199)">
+  <thead>
+    <tr>
+      <th scope="col">Restaurant Id</th>
+      <th scope="col">Restaurant Name</th>
+      <th scope="col">Restaurant Address</th>
+      <th scope="col">Contact Number</th>
+      <th scope="col">Show Menu</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of data">
+    <tr>
+      <td>{{item.resId}}</td>
+      <td>{{item.resName}}</td>
+      <td>{{item.resAddress}}</td>
+      <td>{{item.resContact}}</td>
+      <td><button (click)="showMenu(item.resId)">Show Menu</button></td>
+    </tr>
+  </tbody>
+</table>
+<table class="table " *ngIf="showhide" style="border-radius: 8px ; background-color: rgb(199, 199, 199)">
+  <thead>
+    <tr>
+      <th scope="col"> Items</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of menudata">
+    <tr>
+      <td>{{item.menItem}}</td>
+      <td>{{item.menPrice}}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td align="center" colspan="2">
+        <button (click)="toggle()" class="btn btn-danger">Go Back</button>
+      </td>
+    </tr>
+  </tfoot>
+</table>
