@@ -1,0 +1,27 @@
+<table class="table " style="border-radius: 8px ; background-color: rgb(240, 240, 240)">
+  <thead>
+    <tr>
+      <th scope="col">Hotel name</th>
+      <th scope="col">Rooms</th>
+      <th scope="col">Guests </th>
+      <th scope="col">Price </th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of data">
+    <tr>
+      <td>{{item.hotelname}}</td>
+      <td>{{item.room}}</td>
+      <td>{{item.guests}}</td>
+      <td>{{item.price}}</td>
+    </tr>
+  </tbody>
+  <!-- <tfoot>
+    <tr>
+      <td colspan="3">
+        <form class="form-inline my-2 my-lg-0" method="GET">
+          <button class="btn btn-danger" type="submit" (click)="showRes()">Show Data</button>
+        </form>
+      </td>
+    </tr>
+  </tfoot> -->
+</table>
