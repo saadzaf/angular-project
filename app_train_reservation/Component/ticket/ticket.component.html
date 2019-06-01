@@ -1,0 +1,40 @@
+<form method="POST">
+    <table border="1" style="padding: 5px ;border-radius: 8px">
+      <tr><th colspan="2">Ticket Details</th></tr>
+      <tr>
+        <th>Ticket ID</th>
+        <td><input type="text" [(ngModel)]="ticket_id" readonly></td>
+      </tr>
+      <tr>
+          <th>PNR</th>
+          <td><input type="email" [(ngModel)]="pnr" readonly></td>
+      </tr>
+      <tr>
+        <th>Date of Journey</th>
+        <td><input type="date" [(ngModel)]="dof"></td>
+      </tr>  
+      <tr>
+          <th>User Name</th>
+          <td><input type="text" [(ngModel)]="userid" readonly></td>
+      </tr>
+      <tr>
+        <th>Train Number</th>
+        <td><select>
+            <option value="" [(ngModel)]="train_id"></option>
+          </select></td>
+      </tr>
+      <tr>
+        <th>Source Station</th>
+        <td><select>
+            <option value="" [(ngModel)]="source_id"></option>
+          </select></td>
+      </tr>
+      <tr>
+        <th>Destination Station</th>
+        <td><select>
+          <option value="" [(ngModel)]="destination_id"></option>
+        </select></td>
+      </tr>
+      <tr><td colspan="2"><button type="submit" (click)="SubmitTicket()">Add User</button></td></tr>
+    </table>
+    </form>

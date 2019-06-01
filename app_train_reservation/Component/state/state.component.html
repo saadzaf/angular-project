@@ -1,0 +1,24 @@
+<div *ngIf="!selectionState">
+  <h1>REGISTER STATE</h1>
+    <table border="2">
+      <tr>
+      <th>state name</th>
+      <td><input type="text" [(ngModel)]="state_name" placeholder="enter state name"></td>
+      </tr>
+      <tr>
+        <td colspan="2" (click)="addStates()"><button>Add state</button></td>
+      </tr>
+    </table>
+</div>
+
+<div *ngIf="selectionState">
+  <table border="1">
+    <tr>
+      <th>Name of States</th>
+    </tr>
+    <tr *ngFor="let item of states">
+      <td>{{item.state_name}}</td>
+    </tr>
+  </table>
+  <button (click)="showHide()">Click to add state</button>
+</div>

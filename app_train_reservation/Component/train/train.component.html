@@ -1,0 +1,28 @@
+<form method="POST">
+<table border="1" style="padding: 5px ;border-radius: 8px">
+    <tr><th colspan="2">Train Details</th></tr>
+    <tr><th>Train Number</th>
+    <td><input type="number" [(ngModel)]="train_no" placeholder="Enter train number"></td>
+    </tr>
+    <tr>
+      <th>Train Name</th>
+      <td><input type="text" [(ngModel)]="train_name" placeholder="Enter train name"></td>
+    </tr>
+    <tr>
+      <th>Train Type</th>
+      <td><input type="text" [(ngModel)]="train_type" placeholder="Enter train type"></td>
+    </tr>
+    <th>Source Station</th>
+        <td><select>
+            <option value="" [(ngModel)]="source_id"></option>
+          </select></td>
+      </tr>
+      <tr>
+        <th>Destination Station</th>
+        <td><select>
+          <option value="" [(ngModel)]="destination_id"></option>
+        </select></td>
+      </tr>
+      <tr><td colspan="2"><button type="submit" (click)="SubmitTrain()">Add User</button></td></tr>
+</table>
+</form>

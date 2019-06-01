@@ -1,0 +1,73 @@
+<!-- <form method="POST"> -->
+    <div *ngIf="!selectedEmp">
+
+<table border="1" style="padding: 5px ;border-radius: 8px">
+  <tr>
+    <th colspan="2">Registration</th>
+  </tr>
+  <tr>
+    <th>User name</th>
+    <td><input type="text" [(ngModel)]="user_name" placeholder="Enter username"></td>
+  </tr>
+  <tr>
+    <th>Email ID</th>
+    <td><input type="email" [(ngModel)]="email" placeholder="Enter email id"></td>
+  </tr>
+  <tr>
+    <th>Contact Number</th>
+
+ 
+    <td><input type="number" [(ngModel)]="contact" placeholder="Enter phone number"></td>
+  </tr>
+  <tr>
+    <th>Gender</th>
+    <td>
+      <input type="radio" [(ngModel)]="gender" name="gender" value="m" checked> Male
+      <input type="radio" [(ngModel)]="gender" name="gender" value="f"> Female
+      <input type="radio" [(ngModel)]="gender" name="gender" value="o"> Other
+    </td>
+  </tr>
+  <tr>
+    <th>Password</th>
+    <td><input type="password" [(ngModel)]="pwd"></td>
+  </tr>
+  <tr>
+    <th>Date of Birth</th>
+    <td><input type="date" [(ngModel)]="dob"></td>
+  </tr>
+  <tr>
+    <th>Select your State</th>
+    <td>
+      <select  [(ngModel)]="state">
+          <option *ngFor="let opt of states" [value]="opt.state_id">{{opt.state_name}}</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><button (click)="addUser()">Add User</button></td>
+  </tr>
+</table>
+<!-- </form> -->
+</div>
+<div *ngIf="selectedEmp" class="scrollit" style="height: 350px;">
+    <table border="1" >
+      <tr>
+      <th>User Name</th>
+      <th>Email Id</th>
+      <th>Phone Number</th>
+      <th>Gender</th>
+      <th>Date of Birth</th>
+      <th>State</th>
+    </tr>
+    <tr *ngFor="let item of userdata">
+      <td>{{item.user_name}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.contact}}</td>
+      <td>{{item.gender}}</td>
+      <td>{{item.dob}}</td>
+      <td>{{item.staetid}}</td>
+    </tr>
+    </table>
+
+    <button (click)="showHide()">Click to add user</button>
+    </div>

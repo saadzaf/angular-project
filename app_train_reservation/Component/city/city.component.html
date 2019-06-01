@@ -1,0 +1,31 @@
+<div *ngIf="!selecteedCity">
+  <h1>REGISTER CITY</h1>
+  <table border="2">
+    <tr>
+      <th>city name</th>
+      <td><input type="text" [(ngModel)]="city" placeholder="enter city name"></td>
+    </tr>
+    <tr>
+    <th>Select your State</th>
+      <td>
+        <select [(ngModel)]="state">
+          <option *ngFor="let opt of states" [value]="opt.state_id">{{opt.state_name}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" (click)="addCity()"><button>add city</button></td>
+    </tr>
+  </table>
+</div>
+<div *ngIf="selecteedCity">
+  <table border="1">
+    <tr>
+      <th>State Name</th><th>City Name</th>
+    </tr>
+    <tr *ngFor="let item of citydata">
+      <td>{{item.state}}</td><td>{{item.city}}</td>
+    </tr>
+  </table>
+  <button (click)="showHide()">show</button>
+</div>

@@ -1,0 +1,43 @@
+<div *ngIf="!selectStation">
+  <table border="1">
+    <tr>
+      <th>Station Name</th>
+      <td><input type="text" [(ngModel)]="station_name" placeholder="Enter station name"></td>
+    </tr>
+    <tr>
+        <th>Platform Number</th>
+        <td><input type="number" [(ngModel)]="pf" placeholder="Enter platfrom number"></td>
+      </tr>
+    <tr>
+      <th>City Name</th>
+      <td>
+        <select [(ngModel)]="city">
+          <option *ngFor="let opt1 of citydata" [value]="opt1.city_id">{{opt1.city}}</option>
+        </select></td>
+    </tr>
+    
+    <tr>
+      <th>State Name</th>
+      <td>
+          <select [(ngModel)]="state">
+            <option *ngFor="let opt of states" [value]="opt.state_id">{{opt.state_name}}</option>
+          </select>
+        </td>
+    </tr>
+  </table>
+  <button (click)="addStation()">Add Station</button>
+</div>
+<div *ngIf="selectStation">
+  <table border="1">
+    <tr>
+      <th>State Name</th><th>Platform</th><th>City Name</th><th>State Name</th>
+    </tr>
+    <tr *ngFor="let item of st_data">
+      <td>{{item.station_name}}</td>
+      <td>{{item.platform}}</td>
+      <td>{{item.city}}</td>
+      <td>{{item.state}}</td>
+    </tr>
+  </table>
+  <button (click)="showHide()">Add Station</button>
+</div>
